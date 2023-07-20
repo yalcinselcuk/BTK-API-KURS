@@ -74,5 +74,33 @@ namespace BookDemo.Controllers
             return Ok(book);
 
         }
+
+        //[HttpPut("{id:int}")]
+        //public IActionResult UpdateBook2([FromRoute(Name ="id")] int id, [FromBody] Book _book)
+        //{
+        //    var book = BookDbContext.listBooks.FirstOrDefault(b => b.Id == id);
+        //    if (book == null)
+        //    {
+        //        return NotFound("Obje Bulunamadı");
+        //    }
+        //    book.Title = _book.Title;
+        //    book.Price = _book.Price;
+        //    return Ok(book);
+
+        //}
+
+        //[HttpDelete("{id:int}")]
+        //public IActionResult DeleteBook2([FromRoute(Name ="id")] int id)
+        //{
+        //    var book = BookDbContext.listBooks.FirstOrDefault(b => b.Id == id);
+        //    if (book == null)
+        //    {
+        //        return NotFound("Girdiğiniz Id'ye Ait Kitap Bulunamadı");
+        //    }
+        //    BookDbContext.listBooks.RemoveAt(id - 1);
+        //    return Ok(book);
+
+        //}
+
     }
 }
