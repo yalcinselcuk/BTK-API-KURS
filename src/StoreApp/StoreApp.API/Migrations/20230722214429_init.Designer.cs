@@ -11,7 +11,7 @@ using StoreApp.API.Repositories;
 namespace StoreApp.API.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20230722204117_init")]
+    [Migration("20230722214429_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -42,6 +42,26 @@ namespace StoreApp.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Price = 100m,
+                            Title = "Suç ve Ceza"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Price = 90m,
+                            Title = "Sefiller"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Price = 110m,
+                            Title = "Anna Karenina"
+                        });
                 });
 #pragma warning restore 612, 618
         }
