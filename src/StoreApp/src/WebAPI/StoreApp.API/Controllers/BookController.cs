@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using StoreApp.API.Models;
-using StoreApp.API.Repositories;
+using StoreApp.Entities;
+using StoreApp.Infrastructure.Data;
+using StoreApp.Services;
 
 namespace StoreApp.API.Controllers
 {
@@ -9,24 +10,24 @@ namespace StoreApp.API.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly BookDbContext _db;
+        private readonly IBookService _bookService;
 
-        public BookController(BookDbContext db)
+        public BookController(IBookService bookService)
         {
-            _db = db;
+            this._bookService = bookService;
         }
 
         [HttpGet]
         public IActionResult GetAllBooks()
         {
-            var books = _db.Books.ToList();
+            var books = _bookService.GetAll();
             return Ok(books);
         }
 
         [HttpGet("{id:int}")]
         public IActionResult GetBookById(int id)
         {
-            var book = _db.Books.FirstOrDefault(b => b.Id == id);
+            var book = _bookService.GetById(id);
             if (book == null)
             {
                 return NotFound("Bu ID bulunamadı");
@@ -41,33 +42,29 @@ namespace StoreApp.API.Controllers
             {
                 return BadRequest("Title'a değer girilmelidir");
             }
-            _db.Books.Add(book);
-            _db.SaveChanges();
+            _bookService.Create(book);
             return Ok(book);
         }
         [HttpDelete("[action]")]
         public IActionResult DeleteBook(int id)
         {
-            var book = _db.Books.FirstOrDefault(b => b.Id == id);
+            var book = _bookService.GetById(id);
             if (book == null)
             {
                 return NotFound("Girdiğiniz ID'ye ait bir değer bulunamadı");
             }
-            _db.Books.Remove(book);
-            _db.SaveChanges();
+            _bookService.Delete(book);
             return Ok(book);
         }
         [HttpPut("{id:int}")]
         public IActionResult UpdateBook(int id, Book _book)
         {
-            var book = _db.Books.FirstOrDefault(b => b.Id == id);
-            if(book == null)
+            var book = _bookService.GetById(id);
+            if (book == null)
             {
                 return NotFound("Verilen ID'ye ait güncellenecek değer bulunamadı");
             }
-            book.Title = _book.Title;
-            book.Price = _book.Price;
-            _db.SaveChanges();
+            _bookService.Update(id, _book);
             return Ok(book);
         }
     }

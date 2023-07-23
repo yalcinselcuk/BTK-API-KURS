@@ -2,20 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StoreApp.API.Repositories;
+using StoreApp.Infrastructure.Data;
 
 #nullable disable
 
-namespace StoreApp.API.Migrations
+namespace StoreApp.Infrastructure.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20230722214429_init")]
-    partial class init
+    partial class BookDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

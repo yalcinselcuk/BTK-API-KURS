@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StoreApp.API.Data.Config;
-using StoreApp.API.Models;
+using StoreApp.Infrastructure.Data.Config;
+using StoreApp.Entities;
 
-namespace StoreApp.API.Repositories
+namespace StoreApp.Infrastructure.Data
 {
     public class BookDbContext : DbContext
     {

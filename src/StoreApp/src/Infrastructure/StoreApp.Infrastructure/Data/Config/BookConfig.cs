@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using StoreApp.API.Models;
-
-namespace StoreApp.API.Data.Config
+using StoreApp.Entities;
+namespace StoreApp.Infrastructure.Data.Config
 {
     public class BookConfig : IEntityTypeConfiguration<Book>
     {

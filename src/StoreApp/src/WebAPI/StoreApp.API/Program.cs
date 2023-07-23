@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using StoreApp.API.Repositories;
+using StoreApp.Infrastructure.Data;
+using StoreApp.Infrastructure.Repositories;
+using StoreApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +12,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IBookRepository, EFBookRepository>();
+builder.Services.AddScoped<IBookService, BookService>();
+
 var connectionString = builder.Configuration.GetConnectionString("db");
 builder.Services.AddDbContext<BookDbContext>(option => option.UseSqlServer(connectionString));
+
 
 var app = builder.Build();
 
