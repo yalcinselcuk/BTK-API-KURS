@@ -1,0 +1,16 @@
+2023-07-24 23:15:10.3392 Info Message Template Auto Format enabled
+2023-07-24 23:15:10.4199 Warn Error has been raised. Exception: NLog.NLogConfigurationException: 'FileTarget' cannot assign unknown property 'fileNamw'='.\logs\${shortdate}_logfile.txt'
+   at NLog.Config.LoggingConfigurationParser.SetPropertyValueFromString[T](T targetObject, String propertyName, String propertyValue, ValidatedConfigurationElement element)
+2023-07-24 23:15:10.4591 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-24 23:15:10.4745 Info Validating config: TargetNames=logfile, ConfigItems=8, FilePath=C:\Users\yalci\Desktop\BTK API KURS\src\StoreApp\src\WebAPI\StoreApp.API\nlog.config
+2023-07-24 23:15:10.4745 Warn FileTarget(Name=logfile): Exception in Initialize Exception: NLog.NLogConfigurationException: Required parameter 'FileName' on 'FileTarget(Name=logfile)' was not specified.
+   at NLog.Internal.PropertyHelper.CheckRequiredParameters(ConfigurationItemFactory configFactory, Object o)
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-24 23:40:17.3308 Info Message Template Auto Format enabled
+2023-07-24 23:40:17.4228 Warn Error has been raised. Exception: NLog.NLogConfigurationException: 'FileTarget' cannot assign unknown property 'fileNamw'='.\logs\${shortdate}_logfile.txt'
+   at NLog.Config.LoggingConfigurationParser.SetPropertyValueFromString[T](T targetObject, String propertyName, String propertyValue, ValidatedConfigurationElement element)
+2023-07-24 23:40:17.4753 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-24 23:40:17.5021 Info Validating config: TargetNames=logfile, ConfigItems=8, FilePath=C:\Users\yalci\Desktop\BTK API KURS\src\StoreApp\src\WebAPI\StoreApp.API\nlog.config
+2023-07-24 23:40:17.5247 Warn FileTarget(Name=logfile): Exception in Initialize Exception: NLog.NLogConfigurationException: Required parameter 'FileName' on 'FileTarget(Name=logfile)' was not specified.
+   at NLog.Internal.PropertyHelper.CheckRequiredParameters(ConfigurationItemFactory configFactory, Object o)
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)

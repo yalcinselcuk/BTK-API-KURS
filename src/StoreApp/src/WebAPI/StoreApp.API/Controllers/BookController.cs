@@ -11,10 +11,12 @@ namespace StoreApp.API.Controllers
     public class BookController : ControllerBase
     {
         private readonly IBookService _bookService;
+        private readonly ILoggerService logger;
 
-        public BookController(IBookService bookService)
+        public BookController(IBookService bookService, ILoggerService logger = null)
         {
             this._bookService = bookService;
+            this.logger = logger;
         }
 
         [HttpGet]
@@ -51,7 +53,9 @@ namespace StoreApp.API.Controllers
             var book = _bookService.GetById(id);
             if (book == null)
             {
-                return NotFound("Girdiğiniz ID'ye ait bir değer bulunamadı");
+                string message = "Girdiğiniz ID'ye ait bir kitap bulunamadı";
+                logger.LogInfo($"{message}");
+                return NotFound(message);
             }
             _bookService.Delete(book);
             return Ok(book);
