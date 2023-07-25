@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NLog;
+using StoreApp.API.Extensions;
 using StoreApp.Infrastructure.Data;
 using StoreApp.Infrastructure.Repositories;
 using StoreApp.Services;
@@ -23,6 +24,9 @@ builder.Services.AddSingleton<ILoggerService, LoggerService>();
 
 var app = builder.Build();
 
+var logger = app.Services.GetRequiredService<ILoggerService>();
+app.ConfigureExceptionHandler(logger);
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -30,6 +34,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+if (app.Environment.IsProduction())
+{
+    app.UseHsts();
+}
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
