@@ -4,6 +4,7 @@ using StoreApp.API.Extensions;
 using StoreApp.Infrastructure.Data;
 using StoreApp.Infrastructure.Repositories;
 using StoreApp.Services;
+using StoreApp.Services.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IBookRepository, EFBookRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
-
+builder.Services.AddAutoMapper(typeof(MapProfile));
 var connectionString = builder.Configuration.GetConnectionString("db");
 builder.Services.AddDbContext<BookDbContext>(option => option.UseSqlServer(connectionString));
 

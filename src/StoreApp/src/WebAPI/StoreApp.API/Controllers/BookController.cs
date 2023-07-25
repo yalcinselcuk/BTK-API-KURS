@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StoreApp.DTO.Requests;
 using StoreApp.Entities;
 using StoreApp.Infrastructure.Data;
 using StoreApp.Services;
@@ -37,7 +38,7 @@ namespace StoreApp.API.Controllers
             return Ok(book);
         }
         [HttpPost("[action]")]
-        public IActionResult CreateBook(Book _book)
+        public IActionResult CreateBook(CreateBookRequest _book)
         {
             var book = _book;
             if (book.Title == null || book.Title == "string")
@@ -47,29 +48,29 @@ namespace StoreApp.API.Controllers
             _bookService.Create(book);
             return Ok(book);
         }
-        [HttpDelete("[action]")]
-        public IActionResult DeleteBook(int id)
-        {
-            var book = _bookService.GetById(id);
-            if (book == null)
-            {
-                string message = "Girdiğiniz ID'ye ait bir kitap bulunamadı";
-                logger.LogInfo($"{message}");
-                return NotFound(message);
-            }
-            _bookService.Delete(book);
-            return Ok(book);
-        }
-        [HttpPut("{id:int}")]
-        public IActionResult UpdateBook(int id, Book _book)
-        {
-            var book = _bookService.GetById(id);
-            if (book == null)
-            {
-                return NotFound("Verilen ID'ye ait güncellenecek değer bulunamadı");
-            }
-            _bookService.Update(id, _book);
-            return Ok(book);
-        }
+        //[HttpDelete("[action]")]
+        //public IActionResult DeleteBook(int id)
+        //{
+        //    var book = _bookService.GetById(id);
+        //    if (book == null)
+        //    {
+        //        string message = "Girdiğiniz ID'ye ait bir kitap bulunamadı";
+        //        logger.LogInfo($"{message}");
+        //        return NotFound(message);
+        //    }
+        //    _bookService.Delete(book);
+        //    return Ok(book);
+        //}
+        //[HttpPut("{id:int}")]
+        //public IActionResult UpdateBook(int id, Book _book)
+        //{
+        //    var book = _bookService.GetById(id);
+        //    if (book == null)
+        //    {
+        //        return NotFound("Verilen ID'ye ait güncellenecek değer bulunamadı");
+        //    }
+        //    _bookService.Update(id, _book);
+        //    return Ok(book);
+        //}
     }
 }

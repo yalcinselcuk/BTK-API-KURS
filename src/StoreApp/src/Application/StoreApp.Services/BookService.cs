@@ -1,4 +1,7 @@
-﻿using StoreApp.Entities;
+﻿using AutoMapper;
+using StoreApp.DTO.Requests;
+using StoreApp.DTO.Responses;
+using StoreApp.Entities;
 using StoreApp.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -13,35 +16,42 @@ namespace StoreApp.Services
     {
 
         private readonly IBookRepository bookRepository;
-
-        public BookService(IBookRepository bookRepository)
+        private readonly IMapper _mapper;
+        public BookService(IBookRepository bookRepository, IMapper mapper = null)
         {
             this.bookRepository = bookRepository;
+            _mapper = mapper;
         }
 
-        public IList<Book> GetAll()
+        public IList<BookResponse> GetAll()
         {
-            return bookRepository.GetAll();
+            var books = bookRepository.GetAll();
+            var response = _mapper.Map<IList<BookResponse>>(books);
+            return response;
         }
 
-        public Book? GetById(int id)
+        public BookResponse? GetById(int id)
         {
-            return (bookRepository.GetById(id));
+            var book = bookRepository.GetById(id);
+            return _mapper.Map<BookResponse>(book);
         }
 
-        public void Create(Book entity)
+        public void Create(CreateBookRequest entity)
         {
-            bookRepository.Create(entity);
+            var book = _mapper.Map<Book>(entity);
+            bookRepository.Create(book);
         }
 
-        public void Delete(Book entity)
+        public void Delete(DeleteBookRequest entity)
         {
-            bookRepository.Delete(entity);
+            var book = _mapper.Map<Book>(entity);
+            bookRepository.Delete(book);
         }
 
-        public void Update(int id, Book entity)
+        public void Update(int id, UpdateBookRequest entity)
         {
-            bookRepository.Update(id, entity);
+            var book = _mapper.Map<Book>(entity);
+            bookRepository.Update(id, book);
         }
 
     }

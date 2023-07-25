@@ -1,4 +1,6 @@
-﻿using StoreApp.Entities;
+﻿using StoreApp.DTO.Requests;
+using StoreApp.DTO.Responses;
+using StoreApp.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +12,11 @@ namespace StoreApp.Services
 {
     public interface IBookService
     {
-        IList<Book> GetAll();
-        Book? GetById(int id);
+        IList<BookResponse> GetAll();
+        BookResponse? GetById(int id);
 
-        void Create(Book entity);
-        void Update(int id, Book entity);
-        void Delete(Book entity);
+        void Create(CreateBookRequest entity);
+        void Update(int id, UpdateBookRequest entity);
+        void Delete(DeleteBookRequest entity);
     }
 }
