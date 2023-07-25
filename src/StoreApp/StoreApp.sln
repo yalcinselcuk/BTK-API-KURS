@@ -15,11 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreApp.Entities", "src\Do
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C387BDC8-B576-48C4-A765-18C0470E3874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApp.Infrastructure", "src\Infrastructure\StoreApp.Infrastructure\StoreApp.Infrastructure.csproj", "{FF501C7E-8AE4-4010-96D9-AB961586D04C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreApp.Infrastructure", "src\Infrastructure\StoreApp.Infrastructure\StoreApp.Infrastructure.csproj", "{FF501C7E-8AE4-4010-96D9-AB961586D04C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{CA62E010-D3C1-4498-8796-587CD5D415F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApp.Services", "src\Application\StoreApp.Services\StoreApp.Services.csproj", "{3E8988B6-DACD-44C5-AC65-2B3721A7104D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreApp.Services", "src\Application\StoreApp.Services\StoreApp.Services.csproj", "{3E8988B6-DACD-44C5-AC65-2B3721A7104D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
