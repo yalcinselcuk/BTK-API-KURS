@@ -47,6 +47,11 @@ namespace StoreApp.Services
             var book = _mapper.Map<Book>(entity);
             bookRepository.Delete(book);
         }
+        public DeleteBookRequest GetBookForDelete(int id)
+        {
+            var book = bookRepository.GetById(id);
+            return _mapper.Map<DeleteBookRequest>(book);
+        }
 
         public void Update(int id, UpdateBookRequest entity)
         {

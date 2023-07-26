@@ -16,6 +16,7 @@ namespace StoreApp.Services.Mappings
         {
             CreateMap<Book, BookResponse>();
             CreateMap<CreateBookRequest, Book>();
+            CreateMap<DeleteBookRequest, Book>().ReverseMap();
         }
     }
 }

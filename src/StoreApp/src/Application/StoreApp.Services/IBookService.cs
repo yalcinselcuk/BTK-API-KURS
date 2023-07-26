@@ -18,5 +18,6 @@ namespace StoreApp.Services
         void Create(CreateBookRequest entity);
         void Update(int id, UpdateBookRequest entity);
         void Delete(DeleteBookRequest entity);
+        DeleteBookRequest GetBookForDelete(int id);
     }
 }

@@ -38,3 +38,43 @@
 2023-07-26 00:02:31.6338 Warn FileTarget(Name=logfile): Exception in Initialize Exception: NLog.NLogConfigurationException: Required parameter 'FileName' on 'FileTarget(Name=logfile)' was not specified.
    at NLog.Internal.PropertyHelper.CheckRequiredParameters(ConfigurationItemFactory configFactory, Object o)
    at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-26 15:02:02.3115 Info Message Template Auto Format enabled
+2023-07-26 15:02:02.4053 Warn Error has been raised. Exception: NLog.NLogConfigurationException: 'FileTarget' cannot assign unknown property 'fileNamw'='.\logs\${shortdate}_logfile.txt'
+   at NLog.Config.LoggingConfigurationParser.SetPropertyValueFromString[T](T targetObject, String propertyName, String propertyValue, ValidatedConfigurationElement element)
+2023-07-26 15:02:02.4505 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-26 15:02:02.4716 Info Validating config: TargetNames=logfile, ConfigItems=8, FilePath=C:\Users\yalci\Desktop\BTK API KURS\src\StoreApp\src\WebAPI\StoreApp.API\nlog.config
+2023-07-26 15:02:02.4884 Warn FileTarget(Name=logfile): Exception in Initialize Exception: NLog.NLogConfigurationException: Required parameter 'FileName' on 'FileTarget(Name=logfile)' was not specified.
+   at NLog.Internal.PropertyHelper.CheckRequiredParameters(ConfigurationItemFactory configFactory, Object o)
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-26 15:04:18.3083 Info Message Template Auto Format enabled
+2023-07-26 15:04:18.4106 Warn Error has been raised. Exception: NLog.NLogConfigurationException: 'FileTarget' cannot assign unknown property 'fileNamw'='.\logs\${shortdate}_logfile.txt'
+   at NLog.Config.LoggingConfigurationParser.SetPropertyValueFromString[T](T targetObject, String propertyName, String propertyValue, ValidatedConfigurationElement element)
+2023-07-26 15:04:18.4750 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-26 15:04:18.5447 Info Validating config: TargetNames=logfile, ConfigItems=8, FilePath=C:\Users\yalci\Desktop\BTK API KURS\src\StoreApp\src\WebAPI\StoreApp.API\nlog.config
+2023-07-26 15:04:18.5908 Warn FileTarget(Name=logfile): Exception in Initialize Exception: NLog.NLogConfigurationException: Required parameter 'FileName' on 'FileTarget(Name=logfile)' was not specified.
+   at NLog.Internal.PropertyHelper.CheckRequiredParameters(ConfigurationItemFactory configFactory, Object o)
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-26 15:05:22.8869 Info Message Template Auto Format enabled
+2023-07-26 15:05:22.9787 Warn Error has been raised. Exception: NLog.NLogConfigurationException: 'FileTarget' cannot assign unknown property 'fileNamw'='.\logs\${shortdate}_logfile.txt'
+   at NLog.Config.LoggingConfigurationParser.SetPropertyValueFromString[T](T targetObject, String propertyName, String propertyValue, ValidatedConfigurationElement element)
+2023-07-26 15:05:23.0235 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-26 15:05:23.0473 Info Validating config: TargetNames=logfile, ConfigItems=8, FilePath=C:\Users\yalci\Desktop\BTK API KURS\src\StoreApp\src\WebAPI\StoreApp.API\nlog.config
+2023-07-26 15:05:23.0609 Warn FileTarget(Name=logfile): Exception in Initialize Exception: NLog.NLogConfigurationException: Required parameter 'FileName' on 'FileTarget(Name=logfile)' was not specified.
+   at NLog.Internal.PropertyHelper.CheckRequiredParameters(ConfigurationItemFactory configFactory, Object o)
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-26 15:07:02.8470 Info Message Template Auto Format enabled
+2023-07-26 15:07:02.9878 Warn Error has been raised. Exception: NLog.NLogConfigurationException: 'FileTarget' cannot assign unknown property 'fileNamw'='.\logs\${shortdate}_logfile.txt'
+   at NLog.Config.LoggingConfigurationParser.SetPropertyValueFromString[T](T targetObject, String propertyName, String propertyValue, ValidatedConfigurationElement element)
+2023-07-26 15:07:03.0536 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-26 15:07:03.1237 Info Validating config: TargetNames=logfile, ConfigItems=8, FilePath=C:\Users\yalci\Desktop\BTK API KURS\src\StoreApp\src\WebAPI\StoreApp.API\nlog.config
+2023-07-26 15:07:03.1450 Warn FileTarget(Name=logfile): Exception in Initialize Exception: NLog.NLogConfigurationException: Required parameter 'FileName' on 'FileTarget(Name=logfile)' was not specified.
+   at NLog.Internal.PropertyHelper.CheckRequiredParameters(ConfigurationItemFactory configFactory, Object o)
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)
+2023-07-26 15:35:33.2070 Info Message Template Auto Format enabled
+2023-07-26 15:35:33.3520 Warn Error has been raised. Exception: NLog.NLogConfigurationException: 'FileTarget' cannot assign unknown property 'fileNamw'='.\logs\${shortdate}_logfile.txt'
+   at NLog.Config.LoggingConfigurationParser.SetPropertyValueFromString[T](T targetObject, String propertyName, String propertyValue, ValidatedConfigurationElement element)
+2023-07-26 15:35:33.4550 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-26 15:35:33.4844 Info Validating config: TargetNames=logfile, ConfigItems=8, FilePath=C:\Users\yalci\Desktop\BTK API KURS\src\StoreApp\src\WebAPI\StoreApp.API\nlog.config
+2023-07-26 15:35:33.5121 Warn FileTarget(Name=logfile): Exception in Initialize Exception: NLog.NLogConfigurationException: Required parameter 'FileName' on 'FileTarget(Name=logfile)' was not specified.
+   at NLog.Internal.PropertyHelper.CheckRequiredParameters(ConfigurationItemFactory configFactory, Object o)
+   at NLog.Targets.Target.Initialize(LoggingConfiguration configuration)

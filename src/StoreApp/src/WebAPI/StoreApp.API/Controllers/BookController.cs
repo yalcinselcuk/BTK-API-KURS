@@ -48,19 +48,19 @@ namespace StoreApp.API.Controllers
             _bookService.Create(book);
             return Ok(book);
         }
-        //[HttpDelete("[action]")]
-        //public IActionResult DeleteBook(int id)
-        //{
-        //    var book = _bookService.GetById(id);
-        //    if (book == null)
-        //    {
-        //        string message = "Girdiğiniz ID'ye ait bir kitap bulunamadı";
-        //        logger.LogInfo($"{message}");
-        //        return NotFound(message);
-        //    }
-        //    _bookService.Delete(book);
-        //    return Ok(book);
-        //}
+        [HttpDelete("[action]")]
+        public IActionResult DeleteBook(int id)
+        {
+            var book = _bookService.GetBookForDelete(id);
+            if (book == null)
+            {
+                string message = "Girdiğiniz ID'ye ait bir kitap bulunamadı";
+                logger.LogInfo($"{message}");
+                return NotFound(message);
+            }
+            _bookService.Delete(book);
+            return Ok(book);
+        }
         //[HttpPut("{id:int}")]
         //public IActionResult UpdateBook(int id, Book _book)
         //{
